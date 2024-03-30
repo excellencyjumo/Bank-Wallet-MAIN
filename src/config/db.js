@@ -2,11 +2,14 @@ import pg from "pg";
 const { Client } = pg;
 
 const client = new Client({
-  host: "localhost",
+  host: "dpg-co2nn8g21fec73b13b7g-a.oregon-postgres.render.com",
   port: 5432,
-  database: "Bank-Wallet",
-  user: "postgres",
-  password: "196976",
+  database: "bank_5vdm",
+  user: "bank_5vdm_user",
+  password: "nvd3Muuq7p8IlKpwe0BaFb6zT8KEHSZ6",
+  ssl: {
+    rejectUnauthorized: false 
+  }
 });
 
 client.connect((err) => {

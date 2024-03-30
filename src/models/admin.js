@@ -118,7 +118,7 @@ export async function adminLogin(payload) {
     const values = [email];
     const result = await client.query(query, values);
     const dbPassword = result.rows[0].admin_password;
-    const isMatch = await passwordMatches(password, dbPassword);
+    const isMatch = await password==dbPassword?true:false;
     if (!isMatch) {
       console.log("passwords don't match");
       return false;
